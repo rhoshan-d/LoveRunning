@@ -1,5 +1,5 @@
 /* Google fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
@@ -15,9 +15,8 @@ body {
     flex-direction: column;
     /* Generic project styles */
     color: #3a3a3a;
-    font-family: 'Spicy Rice', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
-
 
 /* Header */
 header {
@@ -26,7 +25,7 @@ header {
     position: fixed;
     z-index: 99;
     width: 100%;
-    box-shadow: 0 2px 2px #3a3a3a ;
+    box-shadow: 0 2px 2px #3a3a3a;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -44,9 +43,24 @@ h1 {
     color: #252525;
 }
 
+#menu {
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+}
+
+#menu > li {
+    margin-bottom: 1em;
+}
+
+.active {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+/* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
-    background-color: white;
+    background-color: #ffffff;
     width: 100%;
     left: 0;
     padding: 0 1rem;
@@ -68,35 +82,28 @@ nav {
     font-size: 2rem;
 }
 
-#menu {
-    font-size: 110%;
-    letter-spacing: 4px;
-    list-style-type: none;
-}
-
-#menu > li {
-    margin-bottom: 1em;
-}
-
-.active {
-    border-bottom: 1px solid #3a3a3a;
-}
-
 /* Main content */
 main {
-    background-color: lightblue;
     /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
     margin-top: 47px;
 }
 
+/* Hero section */
+#hero {
+    height: 600px;
+    width: 100%;
+    /* background: url('../images/hero-image.webp') no-repeat fixed center; */
+    background: url('../images/hero-image.webp') no-repeat center center/cover;
+}
+
 /* Footer */
 #social-networks {
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-evenly;
-    list-style: none;
+    list-style-type: none;
 }
 
 #social-networks i {
@@ -105,6 +112,7 @@ main {
     color: #3a3a3a;
 }
 
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
     /* Header */
     nav {
@@ -124,7 +132,7 @@ main {
     }
 
     .nav-toggle-label {
-      display: none;  
+        display: none;
     }
 
     #logo {
@@ -132,15 +140,17 @@ main {
         line-height: 75px;
         margin: 0 0.5rem;
     }
-    /* main content */
+
+    /* Main content */
     main {
-        /* push main content down due to larger header */
+        /* Push main content down to accommodate larger header */
         margin-top: 79px;
     }
+}
 
-    @media screen and (min-width: 992px) {
-        #menu a:hover {
-            border-bottom: 1px solid #3a3a3a;
-        }
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover{
+        border-bottom: 1px solid #3a3a3a;
     }
 }
